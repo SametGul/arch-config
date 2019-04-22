@@ -1,0 +1,18 @@
+sudo killall wpa_supplicant
+sudo killall dhcpcd
+sudo wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/zyxel.conf 
+sudo wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/eduroam.conf
+sudo dhcpcd wlp2s0
+wpa_passphrase ZyXEL_2F8D sakarya169C > /etc/wpa_supplicant/zyxel.conf 
+sudo dhcpcd enp8s0
+
+ip addr
+ip link
+
+enp8s0
+wlp2s0
+
+ip link enp8s0 up/down
+
+# add second ip
+iip addr add ip_address/net_prefix brd + dev interface

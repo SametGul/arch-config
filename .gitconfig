@@ -1,0 +1,30 @@
+[user]
+	email = mesihkilinc@gmail.com
+	name = Mesih Kilinc
+[credential]
+	helper = cache --timeout=86400
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[difftool]
+	prompt = 0
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	sb = branch -a
+	mt = mergetool
+	d = difftool
+	dst = diff --staged
+	sub = submodule
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	c1 = clone --depth=1
+[mergetool]
+	prompt = false
+[web]
+	browser = open
