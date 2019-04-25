@@ -19,3 +19,6 @@
 [submodule ".config/kicad/github/mesih-kicad"]
 	path = .config/kicad/github/mesih-kicad
 	url = https://github.com/MesihK/mesih-kicad.git
+[submodule ".config/kicad/github/Digikey"]
+	path = .config/kicad/github/Digikey
+	url = https://github.com/Digi-Key/digikey-kicad-library.git

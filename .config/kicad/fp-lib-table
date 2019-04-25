@@ -153,4 +153,5 @@
   (lib (name Sparkfun_Silicon-Custom)(type KiCad)(uri ${SPARKFUN}/Footprints/Silicon-Custom.pretty)(options "")(descr ""))
   (lib (name Sparkfun_Silicon-Standard)(type KiCad)(uri ${SPARKFUN}/Footprints/Silicon-Standard.pretty)(options "")(descr ""))
   (lib (name Sparkfun_Switches)(type KiCad)(uri ${SPARKFUN}/Footprints/Switches.pretty)(options "")(descr ""))
+  (lib (name Digikey)(type KiCad)(uri ${DIGIKEY}/digikey-footprints.pretty)(options "")(descr ""))
 )

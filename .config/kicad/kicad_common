@@ -23,4 +23,5 @@ OLIMEX_COMP=/home/mesih/.config/kicad/github/Olimex/KiCAD_Components
 OLIMEX_FP=/home/mesih/.config/kicad/github/Olimex/KiCAD_Footprints
 USER_LIBS=/home/mesih/.config/kicad/github/mesih-kicad
 SPARKFUN=/home/mesih/.config/kicad/github/Sparkfun
+DIGIKEY=/home/mesih/.config/kicad/github/Digikey
 
