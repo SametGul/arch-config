@@ -37,3 +37,18 @@ Move between errors `[s ]s`
 Fix them `z=`
 Add unknown word to dictionary `zg`
 `:set nospell` to disable checking
+
+## Vimdiff
+
+To avoid whitespace comparison:
+:set diffopt+=iwhite
+
+]c :        - next difference
+[c :        - previous difference
+do          - diff obtain
+dp          - diff put
+zo          - open folded text
+zc          - close folded text
+:diffupdate - re-scan the files for differences
+zr	    - open all folds
+zm	    - close all folds
