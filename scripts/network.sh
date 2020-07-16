@@ -1,6 +1,21 @@
 #!/bin/sh
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YEL='\033[0;33m'
+NC='\033[0m'
+
+function info(){
+	echo -e $YEL$1$NC
+}
+function err(){
+	echo -e $RED$1$NC
+}
+function green(){
+	echo -e $GREEN$1$NC
+}
+
 i3-msg floating enable > /dev/null
-echo 'WiFi Connection Tool'
+info 'WiFi Connection Tool'
 interface=$(iw dev | grep Interface  | cut -d ' ' -f 2)
 if [[ $(echo $interface | wc -l) -ne 1 ]]; then
 	selected=$(echo $interface | dmenu -p 'select interface:')
@@ -10,25 +25,23 @@ fi
 sudo ip link set $selected up
 
 channels=$(sudo iw dev $selected scan | grep SSID | sort -u | cut -d ' ' -f 2)
-echo 'Select channel from menu'
+info 'Select channel from menu'
 selected_channel=$(echo "$channels" | dmenu -p 'select channel:')
 
 conf=/etc/wpa_supplicant/$selected_channel.conf
-echo $conf
 if [[ -e $conf ]]; then
-	echo 'conf file exist connect now!'
+	info 'conf file exist connect now!'
 else
-	echo 'Enter pass phrase of ' $selected_channel
+	green "Enter pass phrase of $selected_channel"
 	read pass
 	if [ -z "$pass" ]
 	then
-		echo 'Empty password, exiting!'
+		err 'Empty password, exiting!'
 		exit 0
 	fi
 	wpa_passphrase $selected_channel $pass > $conf
-	echo 'create conf file'
 fi
 echo $selected_channel > /etc/wpa_supplicant/selected
 
-echo 'connect now'
+green 'connect now'
 ~/scripts/net_fix.sh -f
