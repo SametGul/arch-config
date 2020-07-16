@@ -158,13 +158,14 @@ gaps outer 0
 bindsym $mod+p                  exec --no-startup-id /home/mesih/scripts/monitor.sh
 bindsym $mod+Shift+a            exec --no-startup-id /home/mesih/scripts/audio.sh
 bindsym $mod+n			exec $term /home/mesih/scripts/network.sh 
+bindsym $mod+c			exec $term /home/mesih/scripts/calc.sh 
 bindsym $mod+Shift+n            exec --no-startup-id gksu /home/mesih/scripts/net_fix.sh
 bindsym $mod+m            	exec --no-startup-id gksu /home/mesih/scripts/dmenumount.sh
 bindsym $mod+u            	exec --no-startup-id gksu /home/mesih/scripts/dmenuumount.sh
 bindsym $mod+r                  exec $term -e ranger
 # bindsym $mod+c                  exec $term -e calcurse
 bindsym $mod+Shift+r            exec $term -e sudo ranger
-bindsym $mod+c                  exec --no-startup-id shutter
+#bindsym $mod+c                  exec --no-startup-id shutter
 
 bindsym XF86AudioMute           exec --no-startup-id amixer -D pulse sset Master toggle
 bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume 0 -10%
