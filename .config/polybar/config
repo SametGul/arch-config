@@ -60,7 +60,7 @@ font-3 = Weather Icons:size=8;1
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = mpd backlight-acpi finance openweathermap-fullfeatured namaz pulseaudio filesystem xkeyboard memory cpu battery temperature eth wlan date 
+modules-right = finance mpd backlight-acpi openweathermap-fullfeatured namaz pulseaudio filesystem xkeyboard memory cpu battery temperature eth wlan date 
 
 tray-position = right
 tray-padding = 0
@@ -213,6 +213,7 @@ bar-empty-foreground = ${colors.foreground-alt}
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
+;TODO: add ""
 
 [module/cpu]
 type = internal/cpu
@@ -233,7 +234,7 @@ label = %gb_free%
 [module/wlan]
 type = internal/network
 interface = wlp2s0 
-interval = 30
+interval = 5
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
@@ -255,7 +256,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/eth]
 type = internal/network
 interface = enp8s0
-interval = 30 
+interval = 5 
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "

@@ -5,7 +5,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Start graphical server if i3 not already running.
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
+
 export XDG_CONFIG_HOME=~/.config
+export PATH=$PATH:/media/mesih/hdd1/Xilinx/SDK/2018.3/bin
+export PATH=$PATH:/media/mesih/hdd1/opt/Qt5.11.2/Tools/QtCreator/bin
+export PATH=$PATH:/opt/MATLAB/R2018a/bin
+export PATH=$PATH:/opt/Qt5.12.4/5.12.4/gcc_64/bin
+export PATH=$PATH:/opt/Qt5.12.4/Tools/QtCreator/bin
+export PATH=$PATH:/home/mesih/edu/sys/final/test/
 
 alias ls='ls --color=auto'
 alias ll='ls -alF'
@@ -17,6 +26,12 @@ alias batprtcoff='sudo tpacpi-bat -v -s ST 0 0; sudo tpacpi-bat -v -s SP 0 0; sl
 
 alias youtube-dl360='youtube-dl -i -f "bestvideo[height<=360]+bestaudio/best[height<=360]" -o "%(title)s.%(ext)s"'
 alias youtube-dl480='youtube-dl -i -f "bestvideo[height<=480]+bestaudio/best[height<=480]" -o "%(title)s.%(ext)s"'
+alias yt-axel='youtube-dl --external-downloader-args "-a " --external-downloader axel'
+alias yt-lf='youtube-dl --list-formats'
+alias dmes='dmesg | tail -n 20'
+alias grep='grep --color=auto'
+alias hd='hexdump -C'
+alias sagem='sage --notebook=jupyter'
 youtube-mp3(){
 	youtube-dl -i --audio-format mp3 -x -o "%(title)s.%(ext)s" --download-archive archive.txt "$1"
 }
@@ -26,6 +41,18 @@ youtube-opus(){
 
 duu(){
     sudo du -h -d "$1" > /tmp/size; ll -hS | awk '{print $5"\t"$9}' >> /tmp/size; cat /tmp/size | grep -P '^[0-9,.]+[G]' | sort -t, -n -r; cat /tmp/size | grep -P '^[0-9,.]+[M]' | sort -t, -n -r; rm /tmp/size
+}
+p (){
+for (( ; ; ))
+do
+	ping google.com
+	if [ $? -eq 0 ] 
+	then
+		break
+	else
+		sleep 1
+	fi
+done
 }
 
 h2d () {
@@ -46,5 +73,12 @@ b2h () {
 b2d () {
     printf "%03d\n" `echo "obase=10; ibase=2; $1" | bc`
 }
+cmesg () {
+	dmesg | tail -n $1
+}
+makep () {
+	make -s printvars VARS='$1'
+}
 
 alias bckphdd='sudo rsync -aAX --delete  --info=progress2 / --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} /media/mesih/hdd1/backupArch/ '
+#export LD_PRELOAD=/media/mesih/hdd1/opt/Xilinx/Vivado_Lab/2018.3/data/xicom/cable_drivers/lin64/install_script/install_drivers/usb-driver/libusb-driver.so

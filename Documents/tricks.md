@@ -18,6 +18,7 @@
 * use gtk-chtheme to change gtk themes
 * use `man -k printf(regex)` to search man pages
 * use `axel` for fast downloads
+* yocto ipk files : '/opt/yocto/deploy/ipk/armv7at2hf-neon'
 
 ## Network 
 * `nmcli c` list saved wifi connections
@@ -37,6 +38,8 @@
 * to cropt pdf `pdfmargin`
 * to print two sided first `print odd pages` than `reverse print even pages`
 
+## Git like diff files
+diff -purN package-version.orig/ package-version/
 
 ## Upstreaming
 * `git format-patch -o ../patches/rfc_v1/ --cover-letter -n --thread=shallow -9 --subject-prefix="RFC PATCH v2"`
@@ -71,6 +74,7 @@
 * `git clean -fd` to remove all untracked files
 * `git am path/to/patch` to apply a patch
 * `git stash save --keep-index` to stash only un-staged changes
+* local .gitconfig `git config --local include.path ../.gitconfig`
 
 ## Latex
 * For Turkish tex there is a problem with `includegraphics` and can be solved by
@@ -116,3 +120,29 @@ do             diffget: (o => obtain). The change under the cursor is replaced
 ]c             Jump to the next diff
 [c             Jump to the previous diff
 ```
+
+## Picocom
+
+Save output of com to a log file:
+`picocom /dev/ttyUSB1 -b 115200 -l | tee my.log`
+
+
+##Microscope
+`gst-launch-1.0 v4l2src device='/dev/video2' ! videoflip method=horizontal-flip \
+ ! videoflip method=vertical-flip ! autovideoconvert ! autovideosink`
+
+##Git Submodule
+
+Add a submodule for a specific branch with shallow copy:
+`git submodule add --depth 1 https://github.com/MesihK/linux.git`
+cd linux
+git fetch origin f1c100s-lcd:f1c100s-lcd
+cd ../
+git add linux
+git ci -m'checked to f1c100s branch'
+
+
+##Virtualbox
+
+In order to acces usb devices from Linux host:
+`sudo usermod -a -G vboxusers mesih`

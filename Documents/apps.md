@@ -12,14 +12,19 @@
 * jq              cmd json processor
 * wps		  office program (wps, et, wpp)
 * light		  backlight controller
+* graphic card    use xf86-video-intel
 
 ## Fonts
 * weather-icons   font that weather script uses https://github.com/erikflowers/weather-icons
 * siji            font that polybar uses https://github.com/stark/siji
 * scrot           screnshot
+* for chinese characters use: wqy-zenhei
 
 ## Snipping Tool
 * `sudo add-apt-repository ppa:shutter/ppa
   sudo apt-get update
   sudo apt-get install shutter`
 
+## Youtube-dl 
+* to download a playlist starting from a video:
+* youtube-dl -i --audio-format mp3 -x -o "%(title)s.%(ext)s" --download-archive archive.txt --playlist-start 150

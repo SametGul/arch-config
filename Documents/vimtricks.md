@@ -52,3 +52,23 @@ zc          - close folded text
 :diffupdate - re-scan the files for differences
 zr	    - open all folds
 zm	    - close all folds
+
+## Latex Turkish Characters
+%s/ç/\\c\{c\}/g
+%s/Ç/\\c\{C\}/g
+%s/ğ/\\u\{g\}/g
+%s/Ğ/\\u\{G\}/g
+%s/ı/\{\\i\}/g
+%s/İ/\{\\.I\}/g
+%s/ü/\{\\"u\}/g
+%s/Ü/\{\\"U\}/g
+%s/ö/\{\\"o\}/g
+%s/Ö/\{\\"O\}/g
+%s/ş/\\c\{s\}/g
+%s/Ş/\\c\{S\}/g
+
+## Upper lower case conversion
+
+Toggle case "HellO" to "hELLo" with g~ then a movement.
+Uppercase "HellO" to "HELLO" with gU then a movement.
+Lowercase "HellO" to "hello" with gu then a movement.

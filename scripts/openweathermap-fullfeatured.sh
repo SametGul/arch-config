@@ -35,6 +35,18 @@ get_duration() {
 
 }
 
+#wait for internet connection
+for (( ; ; ))
+do
+	ping -c 1 google.com > /dev/null 2>&1
+	if [ $? -eq 0 ] 
+	then
+		break
+	else
+		sleep 1
+	fi
+done
+
 KEY="8597c7576b60fdb0473f57ad5db1670e"
 CITY="747014"
 UNITS="metric"
