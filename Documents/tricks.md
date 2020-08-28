@@ -7,6 +7,7 @@
 * if i3 has big fonts it about glx driver. `xrandr --dpi 96` solves the problem
 * to be able to use siji font: `sudo mv /etc/fonts/conf.d/70-no-bitmaps.conf /etc/fonts/conf.d/70-no-bitmaps.conf.old`
 * ttf fonts can be used with adding to `/usr/share/fonts/truetype/font-name/ & sudo fc-cache -f -v`
+* To get the class of a window use `xprop | grep CLASS` and click the window
 
 ## Development
 * caching github passwords: `git config --global credential.helper cache`

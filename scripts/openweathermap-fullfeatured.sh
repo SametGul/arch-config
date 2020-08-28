@@ -48,7 +48,12 @@ do
 done
 
 KEY="8597c7576b60fdb0473f57ad5db1670e"
+#gebze
 CITY="747014"
+CNAME="Gebze"
+#avanos
+#CITY="322965"
+#CNAME="Avanos"
 UNITS="metric"
 SYMBOL="°"
 
@@ -97,5 +102,5 @@ if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
     fi
 
     #echo "$(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL   $daytime"
-    echo "$(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL"
+    echo "$CNAME $(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL"
 fi

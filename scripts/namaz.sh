@@ -34,6 +34,8 @@ printname () {
 
 #gebze=9651
 LOCATION=9651
+#avanos=17878
+#LOCATION=17878
 DATE="$(date +%d.%m.%Y)"
 TOMORROW=$(date -d tomorrow +%d.%m.%Y)
 FILE=~/scripts/$LOCATION.dat

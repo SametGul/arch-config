@@ -184,6 +184,7 @@ bindsym XF86MonBrightnessDown exec sudo light -U 10
 
 bindsym Print           exec --no-startup-id scrot -b -d 1 '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/Screenshots'
 bindsym --release $alt+l        exec --no-startup-id /usr/bin/slock
+bindsym --release $alt+k        exec sudo systemctl suspend
 
 bindsym $mod+Shift+y        exec --no-startup-id "bash ~/scripts/i3resize left"
 bindsym $mod+Shift+u        exec --no-startup-id "bash ~/scripts/i3resize down"
@@ -200,3 +201,4 @@ for_window [class="Nemo"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="Shutter"] floating enable
 for_window [class="feh"] floating enable
+for_window [class="Teams"] floating enable

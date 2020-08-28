@@ -60,7 +60,7 @@ font-3 = Weather Icons:size=8;1
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = finance mpd backlight-acpi openweathermap-fullfeatured namaz pulseaudio filesystem xkeyboard memory cpu battery temperature eth wlan date 
+modules-right = finance mpd backlight-acpi openweathermap-fullfeatured namaz pulseaudio filesystem xkeyboard memory cpu battery temperature eth wlan date2 
 
 tray-position = right
 tray-padding = 0
@@ -447,5 +447,12 @@ type = custom/script
 exec = ~/scripts/todo.sh
 interval = 60
 format-underline = #55aa55
+
+[module/date2]
+type = custom/script
+exec = "echo $(TZ='US/Central' date +'%d/%m/%Y %H:%M' && TZ='Turkey' date +' %H:%M')"
+interval = 60
+format-underline = #55aa55
+
 
 ; vim:ft=dosini
