@@ -127,7 +127,7 @@ set ttimeoutlen=100
 	autocmd FileType tex inoremap ,sec \section{}<Enter><Enter><++><Esc>2kf}i
 	autocmd FileType tex inoremap ,ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
 	autocmd FileType tex inoremap ,sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i
-	autocmd FileType tex inoremap ,ref (\ref{})<++><Esc>F}i
+	autocmd FileType tex inoremap ,r (\ref{})<++><Esc>F}i
 	" Equations
 	autocmd FileType tex inoremap ,e \begin{equation}<Enter><Enter>\end{equation}<Enter><++><Esc>2kA<Tab>
 	autocmd FileType tex inoremap ,el \begin{equation}<Enter><Enter>\label{<++>}<Enter>\end{equation}<Enter><++><Esc>3kA<Tab>
@@ -135,6 +135,10 @@ set ttimeoutlen=100
 	autocmd FileType tex inoremap ,eal \begin{eqnarray}<Enter><Enter>\label{<++>}<Enter>\end{eqnarray}<Enter><++><Esc>3kA<Tab>
 	autocmd FileType tex inoremap ,sp \begin{split}<Enter><Enter>\end{split}<Enter><++><Esc>2kA<Tab>
 	autocmd FileType tex inoremap ,sa \begin{aligned}<Enter><Enter>\end{aligned}<Enter><++><Esc>2kA<Tab>
+	autocmd FileType tex inoremap ,p \begin{proof}<Enter><Enter>\end{proof}<Enter><++><Esc>2kA<Tab>
+	autocmd FileType tex inoremap ,pr \begin{property}<Enter><Enter>\end{property}<Enter><++><Esc>2kA<Tab>
+	autocmd FileType tex inoremap ,th \begin{theorem}<Enter><Enter>\end{theorem}<Enter><++><Esc>2kA<Tab>
+	autocmd FileType tex inoremap ,lm \begin{lemma}<Enter><Enter>\end{lemma}<Enter><++><Esc>2kA<Tab>
 	autocmd FileType tex inoremap ,se $$ <++><Esc>F$i
 	autocmd FileType tex inoremap ,m \mathbb{} <++><Esc>F}i
 	autocmd FileType tex inoremap ,mr \mathbb{R}^{} <++><Esc>F}i
@@ -146,10 +150,10 @@ set ttimeoutlen=100
 	autocmd FileType tex inoremap ,( \left( \right) <++><Esc>F(a
 	autocmd FileType tex inoremap ,int \int_{}^{<++>} <++><Esc>2F{a
 	autocmd FileType tex inoremap ,lim \lim_{} <++><Esc>F{a
-	autocmd FileType tex inoremap ,fr \frac{}^{<++>} <++><Esc>2F{a
+	autocmd FileType tex inoremap ,f \frac{}{<++>} <++><Esc>2F{a
 	autocmd FileType tex inoremap ,sum \sum_{}^{<++>} <++><Esc>2F{a
 	autocmd FileType tex inoremap ,pr \prod{}^{<++>} <++><Esc>2F{a
-	autocmd FileType tex inoremap ,d _{}<++><Esc>F{a
+	autocmd FileType tex inoremap ,do _{}<++><Esc>F{a
 	autocmd FileType tex inoremap ,u ^{}<++><Esc>F{a
 	autocmd FileType tex inoremap ,v \vert \vert \vert \vert <++><Esc>3Fta 
 	autocmd FileType tex inoremap ,tl \tilde{}<++><Esc>F{a
@@ -157,9 +161,7 @@ set ttimeoutlen=100
 	autocmd FileType tex inoremap ,l \mathcal{L}_{}<++><Esc>F{a
 	autocmd FileType tex inoremap ,li \mathcal{L}_{\infty}
 	autocmd FileType tex inoremap ,i \infty
-	autocmd FileType tex inoremap ,a \alpha
 	autocmd FileType tex inoremap ,t \tau
-	autocmd FileType tex inoremap ,th \theta
 	autocmd FileType tex inoremap ,te \triangleq
 
 """Git Commits
