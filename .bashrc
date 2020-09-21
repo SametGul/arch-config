@@ -120,3 +120,5 @@ makep () {
 
 #export LD_PRELOAD=/media/mesih/hdd1/opt/Xilinx/Vivado_Lab/2018.3/data/xicom/cable_drivers/lin64/install_script/install_drivers/usb-driver/libusb-driver.so
 alias bckphdd='sudo rsync -aAX --delete  --info=progress2 / --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} /media/mesih/hdd1/backupArch/ '
+
+export LD_LIBRARY_PATH=/usr/local/qwt-6.0.1-svn/lib/:/usr/local/lib64:/usr/local/osg/lib

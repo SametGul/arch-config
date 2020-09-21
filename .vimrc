@@ -44,9 +44,16 @@ cmap W! silent w !sudo tee % >/dev/null
 set printoptions+=syntax:n
 
 " for linux kernel development
-set tabstop=8
-set softtabstop=8
-set shiftwidth=8
+" set tabstop=8
+" set softtabstop=8
+" set shiftwidth=8
+" set noexpandtab
+" set colorcolumn=80
+
+" for normal development
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set noexpandtab
 set colorcolumn=80
 

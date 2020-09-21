@@ -60,7 +60,7 @@ font-3 = Weather Icons:size=8;1
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = finance mpd backlight-acpi openweathermap-fullfeatured namaz pulseaudio filesystem xkeyboard memory cpu battery temperature eth wlan date2 
+modules-right = word finance mpd backlight-acpi openweathermap-fullfeatured namaz pulseaudio filesystem xkeyboard memory cpu battery temperature eth wlan date2 
 
 tray-position = right
 tray-padding = 0
@@ -454,5 +454,10 @@ exec = "echo $(TZ='US/Central' date +'%d/%m/%Y %H:%M' && TZ='Turkey' date +' %H:
 interval = 60
 format-underline = #55aa55
 
+[module/word]
+type = custom/script
+exec = "xclip -o 2>/dev/null | wc -w"
+interval = 5
+format-underline = #55aa55
 
 ; vim:ft=dosini

@@ -23,6 +23,8 @@ exec_always --no-startup-id dunst --conf ~/.config/dunst/dunstrc
 #exec_always --no-startup-id mpd
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/scripts/net_fix.sh
+exec_always --no-startup-id redshift -l 41.04:28.97
+exec_always --no-startup-id goodvibes --status-icon
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -202,3 +204,4 @@ for_window [class="vlc"] floating enable
 for_window [class="Shutter"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="Teams"] floating enable
+for_window [class="Goodvibes"] floating enable
