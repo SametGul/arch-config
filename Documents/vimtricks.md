@@ -72,3 +72,52 @@ zm	    - close all folds
 Toggle case "HellO" to "hELLo" with g~ then a movement.
 Uppercase "HellO" to "HELLO" with gU then a movement.
 Lowercase "HellO" to "hello" with gu then a movement.
+
+
+## Navigation with guides
+
+If you add a guide such as <++> you can create a command that searches for that
+an you can automatically jump there. For example you can jump with space+tab:
+```
+  inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+  vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+  map <Space><Tab> <Esc>/<++><Enter>"_c4l
+```
+Example commands for latex:
+```
+ autocmd FileType tex inoremap ,e \begin{equation}<Enter><Enter>\end{equation}<Enter><++><Esc>2kA
+ autocmd FileType tex inoremap ,ea \begin{eqnarray}<Enter><Enter>\end{eqnarray}<Enter><++><Esc>2kA
+ autocmd FileType tex inoremap ,sp \begin{split}<Enter><Enter>\end{split}<Enter><++><Esc>2kA
+ autocmd FileType tex inoremap ,sa \begin{aligned}<Enter><Enter>\end{aligned}<Enter><++><Esc>2kA
+ autocmd FileType tex inoremap ,se $$ <++><Esc>F$i
+ autocmd FileType tex inoremap ,mb \mathbb{} <++><Esc>F}i
+ autocmd FileType tex inoremap ,d \dot{} <++><Esc>F}i
+ autocmd FileType tex inoremap ,dd \ddot{} <++><Esc>F}i
+ autocmd FileType tex inoremap ,ddd \ddot{} <++><Esc>F}i
+```
+File Types for `FileType` command:
+* tex
+* gitcommit
+* markdown
+* rmd
+* html
+* bib
+
+## Timeout for command recognition
+
+250ms example
+```
+set timeout
+set timeoutlen=250
+set ttimeoutlen=100
+```
+
+## Clipboard
+
+If vim compiled with clipboard option you can check with `vim --version`,
+then you can use + register as clipboard.
+use this commads as helper
+```
+	vnoremap <C-c> "+y
+	map <C-p> "+P
+```
