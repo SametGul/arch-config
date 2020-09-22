@@ -23,7 +23,7 @@ exec_always --no-startup-id dunst --conf ~/.config/dunst/dunstrc
 #exec_always --no-startup-id mpd
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/scripts/net_fix.sh
-exec_always --no-startup-id redshift -l 41.04:28.97
+exec_always --no-startup-id sudo killall -2 redshift && redshift -l 41.04:28.97
 exec_always --no-startup-id goodvibes --status-icon
 
 
@@ -97,7 +97,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -148,8 +148,8 @@ bindsym $alt+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-altg exit'"
 
 
-bindsym $alt+t exec setxkbmap tr
-bindsym $alt+e exec setxkbmap us
+bindsym $mod+t exec setxkbmap tr
+bindsym $mod+e exec setxkbmap us
 #bindsym $alt+Return exec /opt/firefox/firefox
 bindsym $alt+Return exec /usr/bin/chromium
 
@@ -157,51 +157,52 @@ for_window [class="^.*"] border pixel 4
 gaps inner 8
 gaps outer 0
 
-bindsym $mod+p                  exec --no-startup-id /home/mesih/scripts/monitor.sh
-bindsym $mod+Shift+a            exec --no-startup-id /home/mesih/scripts/audio.sh
+bindsym $mod+p			exec --no-startup-id /home/mesih/scripts/monitor.sh
+bindsym $mod+Shift+a	exec --no-startup-id /home/mesih/scripts/audio.sh
 bindsym $mod+n			exec $term /home/mesih/scripts/network.sh 
 bindsym $mod+c			exec $term /home/mesih/scripts/calc.sh 
-bindsym $mod+Shift+n            exec --no-startup-id gksu /home/mesih/scripts/net_fix.sh
-bindsym $mod+m            	exec --no-startup-id gksu /home/mesih/scripts/dmenumount.sh
-bindsym $mod+u            	exec --no-startup-id gksu /home/mesih/scripts/dmenuumount.sh
-bindsym $mod+r                  exec $term -e ranger
-# bindsym $mod+c                  exec $term -e calcurse
-bindsym $mod+Shift+r            exec $term -e sudo ranger
-#bindsym $mod+c                  exec --no-startup-id shutter
+bindsym $mod+Shift+n	exec --no-startup-id gksu /home/mesih/scripts/net_fix.sh
+bindsym $mod+m			exec --no-startup-id gksu /home/mesih/scripts/dmenumount.sh
+bindsym $mod+u			exec --no-startup-id gksu /home/mesih/scripts/dmenuumount.sh
+bindsym $mod+r			exec $term -e ranger
+# bindsym $mod+c		exec $term -e calcurse
+bindsym $mod+Shift+r	exec $term -e sudo ranger
+#bindsym $mod+c			exec --no-startup-id shutter
 
 bindsym XF86AudioMute           exec --no-startup-id amixer -D pulse sset Master toggle
 bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume 0 -10%
 bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume 0 +10%
-#bindsym XF86AudioMute           exec --no-startup-id amixer sset Master toggle
-#bindsym XF86AudioLowerVolume    exec --no-startup-id amixer sset Master 10%-
-#bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer sset Master 10%+
+#bindsym XF86AudioMute			exec --no-startup-id amixer sset Master toggle
+#bindsym XF86AudioLowerVolume	exec --no-startup-id amixer sset Master 10%-
+#bindsym XF86AudioRaiseVolume	exec --no-startup-id amixer sset Master 10%+
 
 bindsym XF86AudioNext           exec --no-startup-id mpc next
 bindsym XF86AudioPlay           exec --no-startup-id mpc toggle
 bindsym XF86AudioPrev           exec --no-startup-id mpc prev
 bindsym XF86AudioStop           exec --no-startup-id mpc toggle
 
-bindsym XF86MonBrightnessUp exec sudo light -A 10
-bindsym XF86MonBrightnessDown exec sudo light -U 10
+bindsym XF86MonBrightnessUp		exec sudo light -A 10
+bindsym XF86MonBrightnessDown	exec sudo light -U 10
 
-bindsym Print           exec --no-startup-id scrot -b -d 1 '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/Screenshots'
+bindsym --release Print         exec --no-startup-id scrot -s -b -d 1 '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/Screenshots'
 bindsym --release $alt+l        exec --no-startup-id /usr/bin/slock
 bindsym --release $alt+k        exec sudo systemctl suspend
 
-bindsym $mod+Shift+y        exec --no-startup-id "bash ~/scripts/i3resize left"
-bindsym $mod+Shift+u        exec --no-startup-id "bash ~/scripts/i3resize down"
-bindsym $mod+Shift+i        exec --no-startup-id "bash ~/scripts/i3resize up"
-bindsym $mod+Shift+o        exec --no-startup-id "bash ~/scripts/i3resize right"
+bindsym $mod+Shift+y	exec --no-startup-id "bash ~/scripts/i3resize left"
+bindsym $mod+Shift+u	exec --no-startup-id "bash ~/scripts/i3resize down"
+bindsym $mod+Shift+i	exec --no-startup-id "bash ~/scripts/i3resize up"
+bindsym $mod+Shift+o	exec --no-startup-id "bash ~/scripts/i3resize right"
 
-bindsym $mod+i              exec $term -e htop
+bindsym $mod+i	exec $term -e htop
 
 #for_window [class="Kicad"] move to workspace 5
-for_window [class="Zenom"] floating enable
-# for_window [class="Zenom"] move to workspace 3
+#for_window [class="Zenom"] move to workspace 3
 #for_window [class="VirtualBox"] floating enable
-for_window [class="Nemo"] floating enable
-for_window [class="vlc"] floating enable
-for_window [class="Shutter"] floating enable
-for_window [class="feh"] floating enable
-for_window [class="Teams"] floating enable
-for_window [class="Goodvibes"] floating enable
+for_window [class="Zenom"]		floating enable
+for_window [class="Nemo"]		floating enable
+for_window [class="vlc"]		floating enable
+for_window [class="Shutter"]	floating enable
+for_window [class="feh"]		floating enable
+for_window [class="Teams"]		floating enable
+for_window [class="Goodvibes"]	floating enable
+for_window [class="GNU Octave"]	floating enable
