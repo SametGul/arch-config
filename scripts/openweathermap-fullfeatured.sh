@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #this is the number of Weather Icons font + 1 at the polybar
-WEATHER_FONT_NUM=7
+WEATHER_FONT_NUM=5
 get_icon() {
     case $1 in
         01d) icon="";;

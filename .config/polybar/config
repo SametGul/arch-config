@@ -65,13 +65,11 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = fixed:pixelsize=8;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=8;1
-font-3 = FontAwesome5Free:style=Solid:size=8;1
-font-4 = FontAwesome5Free:style=Regular:size=8;1
-font-5 = FontAwesome5Brands:style=Regular:size=8;1
-font-6 = Weather Icons:size=8;1
+font-0 = pango:monospace:pixelsize=8;1
+font-1 = FontAwesome5Free:style=Solid:size=8;1
+font-2 = FontAwesome5Free:style=Regular:size=8;1
+font-3 = FontAwesome5Brands:style=Regular:size=8;1
+font-4 = Weather Icons:size=8;1
 
 
 modules-left = i3
@@ -470,8 +468,6 @@ type = custom/script
 exec = ~/scripts/finance.sh
 interval = 600
 format-underline = ${c.yes}
-format-prefix = " "
-format-prefix-foreground = ${c.sar}
 
 [module/date2]
 type = custom/script
@@ -486,7 +482,7 @@ type = custom/script
 exec = "xclip -o 2>/dev/null | wc -w"
 interval = 5
 format-underline = ${c.yes}
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${c.kir}
 
 [module/tracker]
