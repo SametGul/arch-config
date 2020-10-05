@@ -11,13 +11,13 @@ set $ea exec_always --no-startup-id
 
 $ea feh --bg-scale ~/.config/wall.png
 $e  xautolock -time 10 -locker slock
-$e  xcompmgr -f
+$ea xcompmgr -f
 $e  xrandr --dpi 96
 $e  dunst --conf ~/.config/dunst/dunstrc
 $ea $HOME/.config/polybar/launch.sh
 $e  $HOME/scripts/net_fix.sh
 $e  redshift -l 41.04:28.97
-$ea  goodvibes --status-icon
+$ea goodvibes --status-icon
 
 # start a terminal
 bindsym $mod+Return             split horizontal ;; $term
