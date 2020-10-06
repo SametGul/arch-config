@@ -18,17 +18,17 @@ todate () {
 
 printname () {
     if [ $1 = "1" ]; then
-        echo "Imsak"
+        echo "Fajr"
     elif [ $1 = "2" ]; then
-        echo "Güneş"
+        echo "Sun"
     elif [ $1 = "3" ]; then
-        echo "Öğle"
+        echo "Dhuhr"
     elif [ $1 = "4" ]; then
-        echo "İkindi"
+        echo "Asr"
     elif [ $1 = "5" ]; then
-        echo "Akşam"
+        echo "Maghrib"
     else
-        echo "Yatsı"
+        echo "Isha"
     fi
 }
 
@@ -38,7 +38,7 @@ LOCATION=9651
 #LOCATION=17878
 DATE="$(date +%d.%m.%Y)"
 TOMORROW=$(date -d tomorrow +%d.%m.%Y)
-FILE=~/scripts/$LOCATION.dat
+FILE=~/.scripts/$LOCATION.dat
 TIME=$(minutes $(date +%H:%M))
 
 if [ ! -f $FILE ] 
@@ -61,7 +61,7 @@ cat $FILE | grep -m1 -A 6 $DATE | grep -oP [0-9]+:[0-9]+ | while read -r line ; 
     then
         RES=$(echo $Tline \- $TIME | bc)
         
-        echo $(printname $CNT) $(todate $RES)
+        echo $LABEL $(printname $CNT) $(todate $RES)
         exit 0
     fi
 done
@@ -73,5 +73,4 @@ DATE=$(date -d tomorrow +%d.%m.%Y)
 Tline=$(minutes $(cat $FILE | grep -m1 -A 1 $DATE | grep -oP [0-9]+:[0-9]+))
 RES=$(echo 24\*60\-$TIME\+$Tline | bc)
 echo $(printname $CNT) $(todate $RES)
-
 
